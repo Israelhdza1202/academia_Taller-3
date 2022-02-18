@@ -34,7 +34,7 @@ public class PabellonDAOImpl extends PersonaDAOImpl implements PabellonDAO{
 
     @Override
     public Iterable<Persona> findEmpleadoByTipoEmpleado(TipoEmpleado tipoEmpleado) {
-        return repository.;
+        return null;
     }
 
 }
