@@ -5,10 +5,10 @@ import com.ibm.academia.restapi.universidad.modelo.entidades.Aula;
 import com.ibm.academia.restapi.universidad.modelo.entidades.Carrera;
 import com.ibm.academia.restapi.universidad.modelo.entidades.Pabellon;
 import com.ibm.academia.restapi.universidad.modelo.entidades.Persona;
-import com.ibm.academia.restapi.universidad.repositorios.PersonaRepository;
+import com.ibm.academia.restapi.universidad.repositorios.PabellonRepository;
 
-public class PabellonDAOImpl extends PersonaDAOImpl implements PabellonDAO{
-    public PabellonDAOImpl(PersonaRepository repository) {
+public class PabellonDAOImpl extends GenericoDAOImpl<Pabellon, PabellonRepository> implements PabellonDAO{
+    public PabellonDAOImpl(PabellonRepository repository) {
         super(repository);
     }
 
@@ -32,9 +32,5 @@ public class PabellonDAOImpl extends PersonaDAOImpl implements PabellonDAO{
         return null;
     }
 
-    @Override
-    public Iterable<Persona> findEmpleadoByTipoEmpleado(TipoEmpleado tipoEmpleado) {
-        return null;
-    }
 
 }

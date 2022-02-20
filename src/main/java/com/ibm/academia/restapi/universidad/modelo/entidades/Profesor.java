@@ -21,8 +21,7 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @Entity
-//@Table(name = "profesores", schema = "universidad")
-@Table(name = "profesores")
+@Table(name = "profesores", schema = "universidad")
 @PrimaryKeyJoinColumn(name = "persona_id")
 public class Profesor extends Persona 
 {
@@ -31,8 +30,8 @@ public class Profesor extends Persona
 	
 	@ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
 	@JoinTable(
-			//name = "profesor_carrera", schema = "universidad",
-			name = "profesor_carrera",
+			name = "profesor_carrera", schema = "universidad",
+			//name = "profesor_carrera",
 			joinColumns = @JoinColumn(name = "profesor_id"),
 			inverseJoinColumns = @JoinColumn(name = "carrera_id")
 			)

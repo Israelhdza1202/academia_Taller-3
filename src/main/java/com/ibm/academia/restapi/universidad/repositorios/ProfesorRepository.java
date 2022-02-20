@@ -9,8 +9,8 @@ import com.ibm.academia.restapi.universidad.modelo.entidades.Persona;
 public interface ProfesorRepository extends PersonaRepository
 {
 
-	@Query("select p from Profesor p join fetch p.carrera c  where c.nombre = ?2")
-	public Iterable<Persona> findProfesoresByCarrera(String carrera);
+	/*@Query("select p from Profesor p join fetch p.carrera c  where c.nombre = ?2")
+	public Iterable<Persona> findProfesoresByCarrera(String carrera);*/
 
 }
 
