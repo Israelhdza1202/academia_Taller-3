@@ -18,9 +18,9 @@ import com.ibm.academia.restapi.universidad.servicios.CarreraDAO;
 public class TestUniversidad implements CommandLineRunner
 {
 	/*@Autowired
-	private CarreraDAO carreraDao;
+	private CarreraDAO carreraDao;*/
 	
-	@Autowired
+	/*@Autowired
 	private AlumnoDAO alumnoDao;*/
 	
 	@Override
@@ -35,16 +35,16 @@ public class TestUniversidad implements CommandLineRunner
 		/*Direccion direccionAlumno = new Direccion("Calle falsa", "11", "2235", "1506", "15", "Puebla2");
 		Persona alumno = new Alumno(null, "Juanito", "Gomez", "987654321", "nsegura", direccionAlumno);
 		Persona personaAlumno = alumnoDao.guardar(alumno);
-		System.out.println(personaAlumno.toString());
+		System.out.println(personaAlumno.toString());*/
 		
 		
 		//TODO CCONSULTA
-		List<Persona> alumnos = (List<Persona>)alumnoDao.buscarTodos();
+		/*List<Persona> alumnos = (List<Persona>)alumnoDao.buscarTodos();
 		alumnos.forEach(System.out::println);*/
 		
 		//Carrera carrera = null;
 		/*Carrera carrera = new Carrera(null, "Fiseica", 60, 5, "nsegura");
-		
+
 		Optional<Carrera> oCarrera = carreraDao.buscarPorId(5L);
 		
 		if(oCarrera.isPresent())
@@ -62,7 +62,7 @@ public class TestUniversidad implements CommandLineRunner
 		carrera.setCantidadAnios(3);
 		carrera.setCantidadMaterias(10);
 		carreraDao.guardar(carrera);
-		
+
 		System.out.println("Carrera Actualizada: " + carreraDao.buscarPorId(1L).orElse(new Carrera()).toString());
 		
 		//TODO UPDATE

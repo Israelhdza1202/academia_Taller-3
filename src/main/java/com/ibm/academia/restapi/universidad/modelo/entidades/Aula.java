@@ -30,7 +30,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 @Table(name = "aulas", schema = "universidad")
-//@Table(name = "aulas")
 public class Aula implements Serializable 
 {
 	@Id
@@ -60,7 +59,7 @@ public class Aula implements Serializable
 	private Date fechaModificacion;
 	
 	@ManyToOne(optional = true, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-	@JoinColumn(name = "pabellon_id", foreignKey = @ForeignKey(name = "FK_i_PABELLON_ID"))
+	@JoinColumn(name = "pabellon_id", foreignKey = @ForeignKey(name = "FK_PABELLON_ID"))
 	private Pabellon pabellon;
 	
 	public Aula(Long id, Integer numeroAula, String medidas, Integer cantidadPupitres, TipoPizarron tipoPizarron, String usuarioCreacion) 

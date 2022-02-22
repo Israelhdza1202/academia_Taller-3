@@ -28,7 +28,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 @Table(name = "pabellones", schema = "universidad")
-//@Table(name = "pabellones")
 public class Pabellon implements Serializable 
 {
 	@Id

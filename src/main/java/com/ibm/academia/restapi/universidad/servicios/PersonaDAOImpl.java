@@ -2,13 +2,12 @@ package com.ibm.academia.restapi.universidad.servicios;
 
 import java.util.Optional;
 
-import com.ibm.academia.restapi.universidad.enumeradores.TipoEmpleado;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.ibm.academia.restapi.universidad.modelo.entidades.Persona;
 import com.ibm.academia.restapi.universidad.repositorios.PersonaRepository;
 
-public abstract class PersonaDAOImpl extends GenericoDAOImpl<Persona, PersonaRepository> implements PersonaDAO
+public class PersonaDAOImpl extends GenericoDAOImpl<Persona, PersonaRepository> implements PersonaDAO
 {
 	public PersonaDAOImpl(PersonaRepository repository) 
 	{
@@ -35,7 +34,4 @@ public abstract class PersonaDAOImpl extends GenericoDAOImpl<Persona, PersonaRep
 	{
 		return repository.buscarPersonaPorApellido(apellido);
 	}
-
-    @Transactional(readOnly = true)
-    public abstract Iterable<Persona> findEmpleadoByTipoEmpleado(TipoEmpleado tipoEmpleado);
 }

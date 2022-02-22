@@ -1,16 +1,17 @@
 package com.ibm.academia.restapi.universidad.repositorios;
 
+import com.ibm.academia.restapi.universidad.modelo.entidades.Carrera;
+import com.ibm.academia.restapi.universidad.modelo.entidades.Profesor;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.ibm.academia.restapi.universidad.modelo.entidades.Persona;
-
-@Repository("repositoryProfesor")
+@Repository("repositorioProfesor")
 public interface ProfesorRepository extends PersonaRepository
 {
+	@Query("select p from Profesor p join fetch p.carreras c  where c.nombre = ?1")
+	public Iterable<Profesor> findProfesoresByCarrera(String carrera);
 
-	/*@Query("select p from Profesor p join fetch p.carrera c  where c.nombre = ?2")
-	public Iterable<Persona> findProfesoresByCarrera(String carrera);*/
+	//insert select delete update//
+
 
 }
-

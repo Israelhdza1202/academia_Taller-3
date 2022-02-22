@@ -1,7 +1,5 @@
 package com.ibm.academia.restapi.universidad.servicios;
 
-import com.ibm.academia.restapi.universidad.enumeradores.TipoEmpleado;
-import com.ibm.academia.restapi.universidad.modelo.entidades.Carrera;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -18,16 +16,6 @@ public class AlumnoDAOImpl extends PersonaDAOImpl implements AlumnoDAO
 	public AlumnoDAOImpl(@Qualifier("repositorioAlumno")PersonaRepository repository) 
 	{
 		super(repository);
-	}
-
-	@Override
-	public Iterable<Persona> findEmpleadoByTipoEmpleado(TipoEmpleado tipoEmpleado) {
-		return null;
-	}
-
-	@Override
-	public Iterable<Carrera> buscarCarrerasPorProfesorNombreYApellido(String nombre, String apellido) {
-		return null;
 	}
 
 	@Override

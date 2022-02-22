@@ -2,11 +2,10 @@ package com.ibm.academia.restapi.universidad.servicios;
 
 import java.util.Optional;
 
-import com.ibm.academia.restapi.universidad.modelo.entidades.Carrera;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.transaction.annotation.Transactional;
 
-public abstract class GenericoDAOImpl<E, R extends CrudRepository<E, Long>> implements GenericoDAO<E>
+public class GenericoDAOImpl<E, R extends CrudRepository<E, Long>> implements GenericoDAO<E>
 {
 	protected final R repository;
 	
@@ -42,7 +41,4 @@ public abstract class GenericoDAOImpl<E, R extends CrudRepository<E, Long>> impl
 	{
 		repository.deleteById(id);
 	}
-
-    @Transactional(readOnly = true)
-    public abstract Iterable<Carrera> buscarCarrerasPorProfesorNombreYApellido(String nombre, String apellido);
 }
